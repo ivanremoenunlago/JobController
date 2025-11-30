@@ -1,8 +1,9 @@
 messages:
-  incompatible-job: "§cYou cannot join this job because you already have an incompatible job active:"
+  incompatible-job: "§cYou cannot join this job because you already have an incompatible job active: "
   incompatible-job-sound: "BLOCK_NOTE_BLOCK_BASS" #block.note_block.bass
+  level-decreased: "§eYour level for job §6%job% §ehas been reduced by §c%amount%§e. New level: §a%new_level%."
 jobs:
-  miner:
+  miner_f:
     on-join:
       give-permissions-per-level:
         10:
@@ -12,7 +13,7 @@ jobs:
         50:
           - "group.miner_f_50"
         100:
-          - "group.job_miner_100"
+          - "group.miner_100"
 
     on-leave:
       decrease-level: 2
@@ -20,7 +21,7 @@ jobs:
         - "group.miner_f_10"
         - "group.miner_f_40"
         - "group.miner_f_50"
-        - "group.job_miner_100"
+        - "group.miner_100"
 
     incompatible-jobs:
       - "farmer"

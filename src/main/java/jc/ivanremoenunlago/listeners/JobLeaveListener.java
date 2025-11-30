@@ -58,6 +58,14 @@ public class JobLeaveListener implements Listener {
         data.setXP(0); // Optional: reset XP
         data.update();
 
+        String msg = yaml.getConfig().getString("messages.level-decreased", "")
+                .replace("%job%", JobsAPI.getJobById(jobId).getName())
+                .replace("%amount%", String.valueOf(decrease))
+                .replace("%new_level%", String.valueOf(newLevel));
+
+        if (!msg.isEmpty())
+            player.sendMessage(msg);
+
         plugin.getLogger().info("JobLeaveListener: Decreased level of " + player.getName() +
                 " for job '" + jobId + "' by " + decrease + ". New level: " + newLevel);
     }
