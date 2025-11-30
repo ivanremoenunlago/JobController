@@ -1,6 +1,7 @@
 package jc.ivanremoenunlago;
 
-import jc.ivanremoenunlago.listeners.JobListener;
+import jc.ivanremoenunlago.listeners.JobJoinListener;
+import jc.ivanremoenunlago.listeners.JobLeaveListener;
 import jc.ivanremoenunlago.utils.YAMLUtils;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
@@ -28,8 +29,10 @@ public final class JobController extends JavaPlugin {
             getLogger().severe("LuckPerms is not loaded! The plugin will not function properly.");
         }
 
-        // Register listener
-        getServer().getPluginManager().registerEvents(new JobListener(this), this);
+        // Register listeners
+        getServer().getPluginManager().registerEvents(new JobJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new JobLeaveListener(this), this);
+
 
         getLogger().info("JobController has been enabled successfully.");
     }

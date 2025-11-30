@@ -1,25 +1,27 @@
+messages:
+  incompatible-job: "§cYou cannot join this job because you already have an incompatible job active:"
+  incompatible-job-sound: "BLOCK_NOTE_BLOCK_BASS" #block.note_block.bass
 jobs:
   miner:
     on-join:
       give-permissions-per-level:
         10:
-          - "group.job_miner_10"
-          - "permission.jobs.miner.basic"
-        20:
-          - "group.job_miner_20"
-          - "permission.jobs.miner.intermediate"
-        30:
-          - "group.job_miner_30"
-          - "permission.jobs.miner.advanced"
+          - "group.miner_f_10"
+        40:
+          - "group.miner_f_40"
+        50:
+          - "group.miner_f_50"
+        100:
+          - "group.job_miner_100"
 
     on-leave:
       decrease-level: 2
       remove-permissions:
-        - "group.job_miner_10"
-        - "group.job_miner_20"
-        - "group.job_miner_30"
-        - "permission.jobs.miner.special"
+        - "group.miner_f_10"
+        - "group.miner_f_40"
+        - "group.miner_f_50"
+        - "group.job_miner_100"
 
     incompatible-jobs:
-      - "excavador"
+      - "farmer"
       - "lumberjack"
