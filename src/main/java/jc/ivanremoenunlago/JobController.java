@@ -17,9 +17,9 @@ public final class JobController extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        // Save and load the jobs_settings.yml file
+        // Save and load the config.yml file
         saveDefaultConfig();
-        yamlUtils = new YAMLUtils(this, "jobs_settings.yml");
+        yamlUtils = new YAMLUtils(this, "config.yml");
         yamlUtils.load();
 
         // Get LuckPerms instance

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JobController:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JobController_jar</output-path>
+    <root id="archive" name="JobController.jar">
+      <element id="module-output" name="JobController" />
+    </root>
+  </artifact>
+</component>
