@@ -1,0 +1,25 @@
+jobs:
+  miner:
+    on-join:
+      give-permissions-per-level:
+        10:
+          - "group.job_miner_10"
+          - "permission.jobs.miner.basic"
+        20:
+          - "group.job_miner_20"
+          - "permission.jobs.miner.intermediate"
+        30:
+          - "group.job_miner_30"
+          - "permission.jobs.miner.advanced"
+
+    on-leave:
+      decrease-level: 2
+      remove-permissions:
+        - "group.job_miner_10"
+        - "group.job_miner_20"
+        - "group.job_miner_30"
+        - "permission.jobs.miner.special"
+
+    incompatible-jobs:
+      - "excavador"
+      - "lumberjack"

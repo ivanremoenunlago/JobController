@@ -1,0 +1,5 @@
+name: JobController
+version: 1.0
+ #main: jc.ivanremoenunlago.JobController
+api-version: 1.21
+depend: [ExcellentJobs, LuckPerms]
